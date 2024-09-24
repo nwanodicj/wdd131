@@ -10,18 +10,22 @@ body {
   border-top-color: black;
   display: grid;
   grid-template-columns: 1fr auto 8px 300px;
-  height: 100vh;
+  width: 98vw;
+  height: 100vh,
+}
+
+header, .about-me, footer {
+  background-color: rgb(62, 62, 187);
 }
 
 header {
   text-align: center;
   color: white;
-  background-color: rgb(39, 144, 185);
   grid-column: 1 / 5;
   padding-top: 0.4rem;
 }
 
-.nav-bar {
+.nav-bar-container {
   display: flex;
   background-color: rgb(36, 41, 41);
   grid-column: 1 / 5;
@@ -46,14 +50,14 @@ a:hover {
 }
 
 .left-sidebar {
-  background-color: rgb(252, 247, 247);
+  background-color: white;
   grid-column: 3 / 1;
   height: 80vh;
 }
 
 .right-sidebar {
   border-color: gray;
-  background-color: rgb(252, 247, 247);
+  background-color: white;
   grid-column: 4 / 4;
   
 }
@@ -63,7 +67,6 @@ a:hover {
   border-radius: 0.2rem;
   text-align: center;
   padding: 5px;
-  background-color: rgb(39, 144, 185);
 }
 
 .about-me-container {
@@ -72,6 +75,8 @@ a:hover {
 }
 
 .profile-pcs {
+  max-width: 100%;
+  display: block;
   width:250px;
   height: 200px;
   padding-left: 8rem;
@@ -113,21 +118,21 @@ caption {
 }
 
 ul {
-  padding-top: 10rem;
+  display: grid;
+  padding-top: 6rem;
 }
 
 .li-a {
   color: blue;
-  
+  cursor: pointer;
 }
 
-.li-a:visited {
-  cursor: pointer;
+.li-a :visited {
+  color: rgb(233, 103, 125);
 }
 
 footer {
   margin-top: 1rem;
-  background-color: rgb(39, 144, 185);
   text-align: center;
   grid-column: 5 / 1;
   height: 10vh;
@@ -139,18 +144,13 @@ footer {
 }
 
 
-p {
-	margin: 0.25rem;
-	border: 1px solid rgba(0, 0, 0, 0.1);
-	padding: 0.5rem 0.75rem;
-	background-color: #eee;
-}
 
 .highlight {
-	color: navy;
-	font-weight: 700;
-	font-family: hebrew;
+color: rgb(242, 242, 247);
+font-weight: 700;
+font-family: hebrew;
 }
+
 
 
 /*body {
