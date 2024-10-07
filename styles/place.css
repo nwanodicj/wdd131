@@ -1,0 +1,178 @@
+/* Small Screen */
+* {
+  margin-top: 0;
+  margin-right: 0;
+  margin-left: 0;
+  margin-bottom: 0;
+}
+
+
+body {
+  font-family: 'roboto', sans-serif;
+  margin: 1rem auto;
+  border: 1px solid #bbb;
+  padding: 1rem;
+  
+}
+
+header, main, footer {
+  margin: 1rem auto;
+  border: 1px solid #bbb;
+  background-color: #f3f4f5;
+}
+
+header {
+  background-color: rgb(100, 100, 243);
+  text-align: center;
+  height: 10vh;
+  color: white;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1rem;
+}
+
+.image {
+  width: 100px;
+  background-image: url(../images/gorilla_3.jpg);
+  background-size: cover;
+  width: 15rem;
+  height: 20rem;
+}
+
+.weather-container {
+  margin-left: 4rem;
+}
+
+
+h3 {
+  font-size: 8.5px;
+  color: black;
+  margin-top: 0.7rem;
+  margin-left: 1rem;
+}
+
+h4 {
+  margin-top: 2.8rem;
+  color: black;
+  font-size: 30px;
+}
+
+.wind-chill-factor {
+  width: 100px;
+  height: 100px;
+}
+
+section {
+  padding: 1rem;
+  background-color: #fff;
+}
+
+footer {
+  background-color: rgb(100, 100, 243);
+  margin-top: 1rem;
+  text-align: center;
+  grid-column: 5 / 1;
+  height: 10vh;
+  color: white;
+}
+
+
+/* large screen*/
+
+@media screen and (min-width: 500px) {
+
+  * {
+      margin-top: 0;
+      margin-right: 0;
+      margin-left: 0;
+      margin-bottom: 0;
+  }
+
+  body {
+      font-family: 'roboto', sans-serif;
+      margin: 1rem;
+      border: 1px solid #bbb;
+      padding: 1rem;
+  }
+  
+  header, main, footer {
+      margin: 1rem auto;
+      border: 1px solid #bbb;
+      padding: 1rem;
+      background-color: #e6f2ff;
+  }
+
+  header {
+      background-color: rgb(100, 100, 243);
+      color: white;
+  
+  }
+  
+  section {
+      padding: 1rem;
+      background-color: #fff;
+  }
+  
+  main {
+      background-image: url(../images/wild.jpg);
+      background-size: cover;
+      grid-template-columns: auto 3/1 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 1rem;
+  }
+
+  .image {
+      border: none;
+      background-image: url(../images/wild.jpg);
+      width:0;
+      height: 0;
+  }
+
+  .wind-chill-container {
+      margin-left: 35rem;
+      margin-top: 1rem;
+  }
+
+  section {
+      background-color: white;
+      width: 200px;
+      border: 1px solid #bbb;
+      margin-bottom: 1rem;
+  }
+
+  h1, p {
+      color: rgb(241, 226, 226);
+  }
+
+  h1 {
+      color: black;
+  }
+
+
+  h3 {
+      color: black;
+  }
+
+  h4 {
+      margin-top: 2.8rem;
+      color: white;
+      font-size: 25px;
+  }
+  
+  footer {
+      background-color: rgb(100, 100, 243);
+      margin-top: 1rem;
+      text-align: center;
+      grid-column: 5 / 1;
+      color: white;
+  }
+  
+  span {
+      font-size: 10px;
+  }
+
+}
