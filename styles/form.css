@@ -15,17 +15,22 @@ header, main, footer {
 }
 /*.................FORM HERE............*/
 h1 {
-	text-align: center;
+    text-align: center;
+	color: white;
+    font-size: 1rem;
+    margin-left: 2rem;
 }
 
 .form fieldset {
-	background-color:rgb(221, 221, 241);
-	width: 0rem;
+	background-color:rgb(248, 248, 250);
+	width: 8rem;
 }
 
 .form legend {
+    text-align: center;
+    margin-bottom: 1rem;
 	padding-left: .1rem;
-	font-size: 1.5rem;
+	font-size: 1.3rem;
 	color: navy;
 }
 
@@ -36,8 +41,8 @@ h1 {
 }
 
 .form input[type="radio"] {
-	display: inline-table;
     margin-top: 1rem;
+	display: inline-table;
 }
 
 .checkbox-area {
@@ -141,17 +146,14 @@ header a:hover {
     background-color: #04AA6D;
     color: white;
     width: 3rem;
-}
-  
-
-/*-----------------------------------------------------*/
+}/*-----------------------------------------------------*/
 
 
 
 
 
 a {
-    color: rgb(231, 28, 28);
+    color: rgb(250, 248, 248);
     text-decoration: none;
 }
 
@@ -193,6 +195,37 @@ main {
     grid-template-columns: 1fr;
 }
 
+ /*.............Cart Here.............*/
+
+ .cart-container {
+    width: 5rem;
+    height: 1rem;
+    margin-bottom: 1.7rem;
+}
+
+.cart-link {
+    display: block;
+}
+
+.cart-quantity {
+    font-size: .8rem;
+    margin-left: 1rem;
+    padding-bottom: 6rem;
+}
+
+.cart-icon {
+    margin-right: 3rem;
+    width: 2rem;
+    height: 1.5rem;
+}
+
+.cart-text {
+    display: none;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+}/*.................................*/
+
+
 footer {
     background-color: rgb(55, 55, 233);;
     margin-top: 1rem;
@@ -200,6 +233,7 @@ footer {
     grid-column: 5 / 1;
     height: 10vh;
     color: white;
+    font-size: .8rem;
 }
 
 span {
@@ -208,7 +242,13 @@ span {
 
  /* large screen */
 
+ * {
+    margin: 0;
+}
+
  @media screen and (min-width: 500px) {
+
+   
 
 /*.................FORM HERE............*/
     h1 {
@@ -235,7 +275,6 @@ span {
     
     .form input[type="radio"] {
     	display: inline-table;
-        margin-top: 1rem;
     }
     
     .checkbox-area {
@@ -290,6 +329,7 @@ span {
     }
 
 	.form input[type="radio"] {
+        margin-top: 1rem;
 		margin-left: 1rem;
 	}
     
