@@ -1,0 +1,442 @@
+/*------Mobile-phone */
+* {
+    margin: 0;
+    max-width: 640px;
+}
+
+/*...............Color Palette...........*/
+:root {
+    --primary-color: #86e646;
+    --secondary-color: #894857;
+    --accent1-color: #759930;
+    --accent2-color: #508374;
+
+    --heading-font: 'sans', serif;
+    --paragraph-font: 'sans', serif;
+
+    --nav-background-color: #873936;
+    --nav-link-color: #f0f0ee;
+    --nav-hover-link-color: #256847;
+    --nav-hover-background-color: #1111a3;
+    --h4-color: rgb(7, 7, 7);
+    --h2-color: #5160ec;
+    --product-container-color: rgb(253, 253, 253);
+}
+
+body {
+    font-family: 'roboto', sans-serif;
+}
+
+header, main, footer {
+    max-width: 640px;
+    width: 24.5rem;
+    margin: 1rem;
+    border: 1px solid #bbb;
+    padding: 0.5rem;
+}
+
+/*hamburger menu styling  -----------------------*/
+header {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--accent1-color);
+}
+
+.logo-cart {
+    display: flex;
+}
+
+
+header a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+}
+
+header .nav-bar-container {
+    display: none;
+    justify-content: space-evenly;
+}
+
+header a.icon {
+    margin-top: 3.2rem;
+    background-color: var(--accent1-color);
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+header a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.active {
+    background-color: var(--accent1-color);
+    color: white;
+    width: 1.5rem;
+    height: 2rem;
+}
+/*-----------------------------------------------------*/
+
+.search-input {
+    text-align: center;
+}
+
+
+
+.product-rating-star {
+    display: flex;
+}
+
+.stars-rating {
+    width: 15vh;
+    height: 4vh;
+}
+
+.product-rating-number {
+    font-size: 1.3rem;
+    margin-left: 1rem;
+}
+
+.quantity {
+    display: block;
+}
+
+select {
+    margin-top: 5px;
+    width: 3rem;
+}
+
+.product-price {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 100px;
+    margin-top: 5px;
+}
+
+.button-btn {
+    background-color: rgb(247, 247, 10);
+    width: 11rem;
+    height: 2rem;
+    font-weight: 10rem;
+    color: solid black;
+    border: none;
+    border-radius: 1rem;
+    margin-top: .5rem;
+    margin-bottom: 20px;
+    margin-left: 3rem;
+}
+
+.button :hover{
+    background-color: rgb(211, 92, 23);
+}/*-----------------------------------------------------*/
+
+/*.............Cart Here.............*/
+
+.cart-container {
+    width: 5rem;
+    height: 1rem;
+    margin-left: 9rem;
+}
+
+.cart-link {
+    display: block;
+}
+
+.cart-quantity {
+    font-size: .8rem;
+    margin-left: 1rem;
+    padding-bottom: 6rem;
+}
+
+.cart-icon {
+    margin-right: 3rem;
+    width: 2rem;
+    height: 1.5rem;
+}
+
+.cart-text {
+    display: none;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+}/*.................................*/
+
+ /*..........Product style..............*/
+
+.products-grid {
+    display: grid;
+    row-gap: 3rem;
+    grid-template-columns: auto;
+    margin-left: .7rem;
+    
+}
+
+.product-container {
+    background-color: rgb(247, 241, 241);
+    width: 24rem;
+  }
+
+
+.search-input {
+    text-align: center;
+    width: 3rem;
+}
+
+.product-img1 {
+    width: 24rem;
+    height: 20rem;
+    
+
+}
+
+.stars-rating {
+    width: 10vh;
+    height: 4vh;
+}
+
+.product-rating-number {
+    font-size: 1.1rem;
+    margin-left: 1rem;
+}
+
+.quantity {
+    display: block;
+}
+
+select {
+    margin-top: 5px;
+    width: 3rem;
+}
+
+.product-price {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 100px;
+    margin-top: 5px;
+}
+
+
+.button-btn {
+    background-color: rgb(247, 247, 10);
+    width: 23rem;
+    height: 2rem;
+    font-weight: 10rem;
+    color: solid black;
+    border: none;
+    border-radius: 1rem;
+    margin-left: 0rem;
+}
+
+
+
+/*..............Footer...........*/
+footer {
+    background-color: var(--accent1-color);
+    font-size: 0.8rem;
+    margin-top: 1rem;
+    text-align: center;
+    grid-column: 5 / 1;
+    height: 10vh;
+    color: white;
+}
+
+span {
+    font-size: 10px;
+}
+
+ /* large screen */
+
+ @media screen and (min-width: 500px){
+
+    * {
+      margin: 0;
+      max-width: 1500px;
+  }
+
+  header, main, footer {
+    max-width: 1500px;
+    margin: 1rem;
+    border: 1px solid #bbb;
+    width: 215vh;
+  }
+
+  
+    body {
+      font-family: var(--paragraph-font);
+    }
+
+    .active {
+        background-color: var(--accent1-color);
+        color: white;
+    }
+
+    /*.............Cart Here.............*/
+
+.cart-container {
+    margin-left: 60rem;
+    height: 1rem;
+    margin-bottom: 1.7rem;
+}
+
+.cart-link {
+    display: block;
+}
+
+.cart-quantity {
+    font-size: .8rem;
+    margin-left: 1rem;
+    padding-bottom: 6rem;
+}
+
+.cart-icon {
+    margin-right: 3rem;
+    width: 2rem;
+    height: 1.5rem;
+}
+
+.cart-text {
+    display: none;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+}/*.................................*/
+
+
+    .products-grid {
+        display: grid;
+        column-gap: 10px;
+        row-gap: 3rem;
+        grid-template-columns: auto auto auto auto;
+        margin-left: 2rem;
+        
+    }
+    
+
+    section {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1rem; 
+    }
+  
+    .product-container {
+      border-style: 1px solid gray;
+      width: 15.2rem;
+      height: 23.5rem;
+      column-gap: 2rem;
+      background-color: var(--product-container-color);
+    }
+  
+    .nav-bar-container.a {
+        display: flex;
+        margin-left: 8dvb;
+        justify-content: space-evenly;
+    
+    }
+
+    /* Here is to make the navigation bar display on the large screen! */
+
+    header .nav-bar-container {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    /*..................End............*/
+  
+  
+    h1 {
+      text-align: center;
+      color: rgb(228, 206, 206);
+      font-size: bold;
+    }
+  
+    footer {
+      background-color: var(--accent1-color);
+      margin-top: 1rem;
+      text-align: center;
+      grid-column: 5 / 1;
+      height: 10vh;
+      color: white;
+  
+  }
+  
+  span {
+      font-size: 10px;
+      margin-left: 4rem;
+      text-align: center;
+  
+  }
+  
+  
+  
+  input {
+    margin-left: 34.5rem;
+  }
+  
+  .search-bar {
+    text-align: center;
+  }
+
+  .product-rating-star {
+    display: flex;
+    width: 7rem;
+}
+
+/*..........Product style..............*/
+
+.search-input {
+    text-align: center;
+    width: 5rem;
+}
+
+.product-img1 {
+    width: 40vh;
+    height: 30vh;
+}
+
+.stars-rating {
+    width: 15vh;
+    height: 4vh;
+}
+
+.product-rating-number {
+    font-size: 1.3rem;
+    margin-left: 1rem;
+}
+
+.quantity {
+    display: block;
+}
+
+select {
+    margin-top: 5px;
+    width: 3rem;
+}
+
+.product-price {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 100px;
+    margin-top: 5px;
+}
+
+.button-btn {
+    background-color: rgb(247, 247, 10);
+    width: 11rem;
+    height: 2rem;
+    font-weight: 10rem;
+    color: solid black;
+    border: none;
+    border-radius: 1rem;
+    margin-top: .5rem;
+    margin-bottom: 20px;
+    margin-left: 1.9rem;
+}
+
+.button :hover{
+    background-color: rgb(211, 92, 23);
+}
+}
+  /*-----------------------------------------------------*/
