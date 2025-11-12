@@ -1,23 +1,21 @@
-let lastModified = document.querySelector('#last-modification');
+// Set current year
+const currentYear = document.querySelector('#current-year');
+currentYear.textContent = new Date().getFullYear();
 
-lastModified.innerHTML = ""
+// Set last modified date
+const lastModified = document.querySelector('#last-modification');
+lastModified.textContent = document.lastModified;
 
-alert(document.lastModified);
-// returns: Tuesday, December 16, 2017 11:09:42
-let oLastModif = new Date(document.lastModified);
-let nLastModif = Date.parse(document.lastModified);
+// Hamburger menu toggle
+const hamburger = document.querySelector('.hamburger');
+const nav = document.querySelector('.nav-bar-container');
 
-lastModified.innerHTML = `<span class="highlight">${new Intl.DateTimeFormat(
-	"en-US",
-	{
-		nLastModif: "full",
-	}
-).format(nLastModif)
-}`;
-
-lastModified.innerHTML = `Last Modification: ${document.lastModified}`;
-
-
-
-
-
+hamburger.addEventListener('click', () => {
+  if (nav.style.display === "flex") {
+    nav.style.display = "none";
+    hamburger.textContent = "\u2630"; // Hamburger icon
+  } else {
+    nav.style.display = "flex";
+    hamburger.textContent = "✖"; // X icon
+  }
+});

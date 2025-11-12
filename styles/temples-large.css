@@ -1,66 +1,30 @@
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 768px) {
 
-  header, main, footer {
-      max-width: 1500px;
-      margin: 1rem;
-      border: 1px solid #bbb;
-      padding: 1rem;
-  }
-  
-  header {
-      background-color: rgb(100, 100, 243);
-      color: white;
+  /* Show nav as flex and hamburger hidden */
+  .hamburger {
+    display: none;
   }
 
   .nav-bar-container {
-      display: flex;
-      margin-left: 20rem;
-      justify-content: space-evenly;
+    display: flex;
+    justify-content: space-around;
+  }
+
   
+  .main-album-container  {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
   }
 
-  h2 {
-      text-align: center;
-      margin-left: 10rem;
-      
+  .album-container {
+    display: flex;
+    flex-direction: column;
   }
 
-  a {
-      color: white;
-      text-decoration: none;
-  }
-
-  main {
-      grid-template-columns: auto 3/1 auto;
-  }
-
-  .main-album-container {
-      background-color: white;
-      margin-left: 14rem;
-  }
-  
-  .album-container{
-      display: flex;
-  }
-  
   figure {
-      text-align: center;
-      display: grid;
-      padding: 1rem;
-      background-color: #fff;
+    display: block;
+    text-align: center;
+    padding: 0.5rem;
   }
-
-  footer {
-      background-color: rgb(100, 100, 243);
-      margin-top: 1rem;
-      text-align: center;
-      grid-column: 5 / 1;
-      height: 10vh;
-      color: white;
-  }
-  
-  span {
-      font-size: 10px;
-  }
-  
 }
