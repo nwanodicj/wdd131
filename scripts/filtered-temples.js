@@ -1,4 +1,4 @@
-// Temple Data
+// Temple data
 const temples = [
   { year: 2005, templeName: "Aba Nigeria", location: "Aba, Nigeria", dedicated: "2005, August, 7", area: 11500, imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/aba-nigeria/400x250/aba-nigeria-temple-lds-273999-wallpaper.jpg" },
   { year: 1888, templeName: "Manti Utah", location: "Manti, Utah, United States", dedicated: "1888, May, 21", area: 74792, imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/manti-utah/400x250/manti-temple-768192-wallpaper.jpg" },
@@ -14,48 +14,73 @@ const temples = [
   { year: 2001, templeName: "Perth Australia", location: "163 Wordsworth, Yokine, Australia", dedicated: "May 20, 2001", area: 10700, imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/perth-australia-temple/perth-australia-temple-34994-main.jpg" }
 ];
 
-// Render function
-function renderTemples(list) {
-  const container = document.querySelector(".main-album-container");
-  container.innerHTML = "";
-  list.forEach(temple => {
-    container.innerHTML += `
-      <div class="album-container">
-        <figure>
-          <h3>${temple.templeName}</h3>
-          <h5>TempleName: ${temple.templeName}</h5>
-          <h5>Location: ${temple.location}</h5>
-          <h5>Dedicated: ${temple.dedicated}</h5>
-          <h5>Area: ${temple.area} sq ft</h5>
-          <img src="${temple.imageUrl}" alt="${temple.templeName} Temple" loading="lazy">
-        </figure>
-      </div>
-    `;
-  });
+// DOM Elements
+const albumContainer = document.querySelector('.main-album-container');
+const navOutput = document.querySelector('.nav-links-output');
+
+// Function to display temples
+function displayTemples(list) {
+    albumContainer.innerHTML = '';
+    list.forEach(temple => {
+        albumContainer.innerHTML += `
+        <div class="album-container">
+            <figure>
+                <h3>${temple.templeName}</h3>
+                <h5>Temple Name: ${temple.templeName}</h5>
+                <h5>Location: ${temple.location}</h5>
+                <h5>Dedicated: ${temple.dedicated}</h5>
+                <h5>Area: ${temple.area} sq ft</h5>
+                <img src="${temple.imageUrl}" alt="${temple.templeName} Temple" loading="lazy">
+            </figure>
+        </div>`;
+    });
 }
 
 // Filter functions
-const displayAllTemples = () => renderTemples(temples);
-const displayOldTemples = () => renderTemples(temples.filter(t => t.year < 1900));
-const displayNewTemples = () => renderTemples(temples.filter(t => t.year > 2000));
-const displayLargeTemples = () => renderTemples(temples.filter(t => t.area > 90000));
-const displaySmallTemples = () => renderTemples(temples.filter(t => t.area < 10000));
+function showOld() {
+    const oldTemples = temples.filter(t => t.year < 1900);
+    displayTemples(oldTemples);
+    navOutput.textContent = `Old Temples (${oldTemples.length})`;
+}
 
-// Event listeners
-document.querySelector("#home").addEventListener("click", displayAllTemples);
-document.querySelector("#old").addEventListener("click", displayOldTemples);
-document.querySelector("#new").addEventListener("click", displayNewTemples);
-document.querySelector("#large").addEventListener("click", displayLargeTemples);
-document.querySelector("#small").addEventListener("click", displaySmallTemples);
+function showNew() {
+    const newTemples = temples.filter(t => t.year > 2000);
+    displayTemples(newTemples);
+    navOutput.textContent = `New Temples (${newTemples.length})`;
+}
 
-// Last modified
-document.querySelector("#last-modification").textContent = `Last Modification: ${document.lastModified}`;
+function showLarge() {
+    const largeTemples = temples.filter(t => t.area > 90000);
+    displayTemples(largeTemples);
+    navOutput.textContent = `Large Temples (${largeTemples.length})`;
+}
 
-// Hamburger toggle
-document.querySelector("#hamburger").addEventListener("click", () => {
-  const nav = document.querySelector(".nav-bar-container");
-  nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+function showSmall() {
+    const smallTemples = temples.filter(t => t.area < 10000);
+    displayTemples(smallTemples);
+    navOutput.textContent = `Small Temples (${smallTemples.length})`;
+}
+
+function showAll() {
+    displayTemples(temples);
+    navOutput.textContent = `All Temples (${temples.length})`;
+}
+
+// Attach event listeners
+document.querySelector('.js-home-page').addEventListener('click', showAll);
+document.querySelector('.js-old-temples').addEventListener('click', showOld);
+document.querySelector('.js-new-temples').addEventListener('click', showNew);
+document.querySelector('.js-large-temples').addEventListener('click', showLarge);
+document.querySelector('.js-small-temples').addEventListener('click', showSmall);
+
+// Initial display
+showAll();
+
+// Last modification
+document.querySelector('#last-modification').textContent = `Last Modification: ${document.lastModified}`;
+
+// Hamburger menu toggle
+document.querySelector('.icon').addEventListener('click', () => {
+    const nav = document.querySelector('.nav-bar-container');
+    nav.style.display = (nav.style.display === 'block') ? 'none' : 'block';
 });
-
-// Initial render
-displayAllTemples();
