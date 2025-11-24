@@ -1,237 +1,121 @@
-/*------Mobile-phone */
+/*----------------- Basic Styles -----------------*/
 * {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    font-family: 'roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+    line-height: 1.5;
 }
 
 header, main, footer {
-    max-width: 640px;
-    margin: 1rem;
-    border: 1px solid #bbb;
-    padding: 0.5rem;
-}
-
-img {
-    width: 15rem;
-}
-
-/*hamburger menu styling  -----------------------*/
-header {
-    position: relative;
-    overflow: hidden;
-    background-color: rgb(100, 100, 243);
-}
-
-
-header a {
-    color: white;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    display: block;
-}
-
-header .nav-bar-container {
-    display: none;
-    justify-content: space-evenly;
-}
-
-header a.icon {
-    margin-top: 3.2rem;
-    background: rgb(91, 91, 253);
-    display: block;
-    position: absolute;
-    right: 0;
-    top: 0;
-}
-
-header a:hover {
-    background-color: #ddd;
-    color: black;
-}
-
-.active {
-    background-color: #04AA6D;
-    color: white;
-    width: 3rem;
-}
-  
-
-/*-----------------------------------------------------*/
-
-h2{
-    margin-left: 6rem;
-    text-align: center;
-
-}
-
-h1 {
-    text-align: center;
-}
-
-div {
-    max-width: 100px;
-}
-
-a {
-    color: rgb(231, 28, 28);
-    text-decoration: none;
-}
-
-a:hover{
-    color: rgb(34, 2, 34);
-}
-
-main {
-    display: flex;
-    grid-gap: 1rem;
-}
-
-.main-album-container {
-    display: grid;
-    background-color: pink;
-}
-
-.album-container{
-    background-color: gray;
-    display: grid;
-}
-
-caption {
-    text-align: center;
-}
-
-figure {
+    max-width: 1200px;
+    margin: 1rem auto;
     padding: 1rem;
     background-color: #fff;
-    text-align: center;
+    border-radius: 8px;
 }
 
-img {
-    height: 15rem;
-}
-
-main {
-    display: grid;
-    grid-template-columns: 1fr;
-}
-
-footer {
-    background-color: rgb(100, 100, 243);
-    margin-top: 1rem;
-    text-align: center;
-    grid-column: 5 / 1;
-    height: 10vh;
+/*----------------- Header & Nav -----------------*/
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #6464f3;
     color: white;
+    padding: 0.5rem 1rem;
+    position: relative;
 }
 
-span {
-    font-size: 10px;
+header h1 {
+    font-size: 1.8rem;
 }
 
- /* large screen */
+.nav-bar-container button {
+    background-color: #6464f3;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    margin: 0 3px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1rem;
+}
 
- @media screen and (min-width: 500px) {
-    
+.nav-bar-container button:hover {
+    background-color: #04AA6D;
+}
 
-    body {
-        font-family: 'roboto', sans-serif;
-        width: 220vh;
-    }
+/* Hamburger menu */
+.icon {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
 
-    header, main, footer {
-        max-width: 1500px;
-        margin: 1rem;
-        border: 1px solid #bbb;
-        padding: 1rem;
-    }
-    
-    header {
-        background-color: rgb(100, 100, 243);
-        color: white;
-    }
+/*----------------- Main Album -----------------*/
+.main-album-container {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+    padding: 1rem 0;
+}
 
-    .nav-bar-container {
-        display: flex;
-        margin-left: 8dvb;
-        justify-content: space-evenly;
-    
-    }
+.album-container figure {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
 
-    img {
-        height: 12rem;
+.album-container img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 0.5rem;
+    border-radius: 4px;
+}
+
+/*----------------- Footer -----------------*/
+footer {
+    text-align: center;
+    margin-top: 1rem;
+    color: #fff;
+    background-color: #6464f3;
+    padding: 1rem 0;
+}
+
+/*----------------- Responsive -----------------*/
+@media screen and (min-width: 600px) {
+    .main-album-container {
+        grid-template-columns: repeat(2, 1fr);
     }
-    
-    header a {
-        color: white;
-        padding: 14px 16px;
-        text-decoration: none;
-        font-size: 17px;
+}
+
+@media screen and (min-width: 900px) {
+    .main-album-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .icon {
         display: block;
     }
-    
-    header .nav-bar-container {
-        display: flex;
-        justify-content: space-evenly;
+    .nav-bar-container {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #6464f3;
     }
-    
-    
-    header a:hover {
-        background-color: #ddd;
-        color: black;
+    .nav-bar-container button {
+        margin: 5px 0;
     }
-    
-    
-    h2 {
-        text-align: center;
-        margin-left: 37rem;
-    }
-
-    a {
-        color: white;
-        text-decoration: none;
-    }
-
-    main {
-        display: grid;
-        grid-template-columns: 1fr;
-    }
-
-    .main-album-container {
-        margin-left: 5rem;
-        background-color: pink;
-        display: grid;
-        column-gap: 20rem;
-        grid-template-columns: auto auto auto;
-    }
-    
-    .album-container{
-        display: flex;
-        background-color: light rgb(250, 245, 245);
-    }
-    
-    figure {
-        text-align: center;
-        display: grid;
-        padding: 1rem;
-        background-color: #ffffff;
-    }
-
-    footer {
-        background-color: rgb(100, 100, 243);
-        margin-top: 1rem;
-        text-align: center;
-        grid-column: 5 / 1;
-        height: 10vh;
-        color: white;
-    }
-    
-    span {
-        font-size: 10px;
-    }
-    
 }
-/*-----------------------------------------------------*/
