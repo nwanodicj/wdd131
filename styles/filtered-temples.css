@@ -1,4 +1,4 @@
-/*----------------- Basic Styles -----------------*/
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
@@ -7,89 +7,86 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f2f2f2;
-    color: #333;
-    line-height: 1.5;
+    background-color: #f5f5f5;
 }
 
-header, main, footer {
-    max-width: 1200px;
-    margin: 1rem auto;
-    padding: 1rem;
-    background-color: #fff;
-    border-radius: 8px;
-}
-
-/*----------------- Header & Nav -----------------*/
+/* Header */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #6464f3;
+    background-color: rgb(100, 100, 243);
     color: white;
-    padding: 0.5rem 1rem;
+    padding: 1rem;
     position: relative;
 }
 
 header h1 {
-    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
 }
 
-.nav-bar-container button {
-    background-color: #6464f3;
-    border: none;
+.nav-bar-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.nav-bar-container a {
     color: white;
-    padding: 10px 15px;
-    margin: 0 3px;
-    cursor: pointer;
-    border-radius: 4px;
-    font-size: 1rem;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
 }
 
-.nav-bar-container button:hover {
+.nav-bar-container a:hover,
+.nav-bar-container a.active {
     background-color: #04AA6D;
+    border-radius: 4px;
 }
 
-/* Hamburger menu */
 .icon {
     display: none;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
     font-size: 1.5rem;
-    cursor: pointer;
 }
 
-/*----------------- Main Album -----------------*/
+/* Main Content */
+main {
+    max-width: 1200px;
+    margin: 1rem auto;
+    padding: 1rem;
+}
+
 .main-album-container {
     display: grid;
-    gap: 1rem;
     grid-template-columns: 1fr;
-    padding: 1rem 0;
+    gap: 1rem;
 }
 
-.album-container figure {
-    background-color: #fff;
+.album-container {
+    background-color: #ffffff;
     padding: 1rem;
-    border-radius: 8px;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 4px;
 }
 
 .album-container img {
     max-width: 100%;
     height: auto;
-    margin-top: 0.5rem;
     border-radius: 4px;
 }
 
-/*----------------- Footer -----------------*/
+/* Footer */
 footer {
     text-align: center;
+    background-color: rgb(100, 100, 243);
+    color: white;
+    padding: 1rem;
     margin-top: 1rem;
-    color: #fff;
-    background-color: #6464f3;
-    padding: 1rem 0;
 }
 
-/*----------------- Responsive -----------------*/
+/* Responsive */
 @media screen and (min-width: 600px) {
     .main-album-container {
         grid-template-columns: repeat(2, 1fr);
@@ -100,22 +97,26 @@ footer {
     .main-album-container {
         grid-template-columns: repeat(3, 1fr);
     }
+
+    .icon {
+        display: none;
+    }
+
+    .nav-bar-container {
+        display: flex;
+    }
 }
 
-@media screen and (max-width: 600px) {
-    .icon {
-        display: block;
-    }
+/* Hamburger menu toggle for mobile */
+@media screen and (max-width: 599px) {
     .nav-bar-container {
         display: none;
         flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: #6464f3;
+        gap: 0;
     }
-    .nav-bar-container button {
-        margin: 5px 0;
+
+    .icon {
+        display: block;
+        cursor: pointer;
     }
 }
