@@ -1,60 +1,62 @@
-let lastModified = document.querySelector('#last-modification');
+// Footer Year and last modified (human-friendly)
+document.addEventListener("DOMContentLoaded", () => {
+  // year
+  const yearEl = document.querySelector("#year");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-lastModified.innerHTML = ""
+  // last modified: format into readable local string
+  const lastEl = document.querySelector("#last-modification");
+  if (lastEl) {
+    const raw = document.lastModified;
+    if (raw) {
+      const d = new Date(raw);
+      // Use Intl for a nicely formatted date/time
+      lastEl.textContent = new Intl.DateTimeFormat("en-GB", {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        hour: "2-digit",
+        minute: "2-digit"
+      }).format(d);
+    } else {
+      lastEl.textContent = "Unknown";
+    }
+  }
 
+  /* -----------------------
+     Weather (static values)
+     - temp in °C and wind in km/h
+     - apply wind-chill only when valid:
+       Metric: temp <= 10°C and wind > 4.8 km/h
+     ----------------------- */
+  const temperature = 8; // change to match displayed content
+  const windSpeed = 12;  // km/h
 
-// returns: Tuesday, December 16, 2017 11:09:42
-let oLastModif = new Date(document.lastModified);
-let nLastModif = Date.parse(document.lastModified);
+  // update basic fields
+  const tempEl = document.querySelector("#temp");
+  const windEl = document.querySelector("#wind");
+  const wcEl = document.querySelector("#windchill");
 
-lastModified.innerHTML = `<span class="highlight">${new Intl.DateTimeFormat(
-	"en-US",
-	{
-		nLastModif: "full",
-	}
-).format(nLastModif)
-}`;
+  if (tempEl) tempEl.textContent = temperature;
+  if (windEl) windEl.textContent = windSpeed;
 
-lastModified.innerHTML = `Last Modification: ${document.lastModified}`;
+  // wind-chill calculation function (°C) — returns a number or string
+  function calculateWindChill(tempC, windKmh) {
+    // Environment Canada formula for °C and km/h
+    return (
+      13.12 +
+      0.6215 * tempC -
+      11.37 * Math.pow(windKmh, 0.16) +
+      0.3965 * tempC * Math.pow(windKmh, 0.16)
+    ).toFixed(1);
+  }
 
+  // decide whether to calculate
+  let result = "N/A";
+  if (temperature <= 10 && windSpeed > 4.8) {
+    result = calculateWindChill(temperature, windSpeed) + " °C";
+  }
 
-// Here we use array to store the data using the object module
-const windchills = [{
-	name: 'Weather',
-
-	image: 'images/weather-forecast-icon.webp',
-
-	rating: {
-		count: '23'
-	}
-}];
-
-
-let windchillsHTML = ''
-// Here we call the forEach() function and inside the forEach() function, we generated the html
-windchills.forEach((windchill) => {
-	windchillsHTML += `
-	<div class="weather-container">
-        <div>
-            <h1>${windchill.name}</h1>
-        </div>
-        <div class="wind-chill-factor-container">
-            <img class="wind-chill-factor" src="${windchill.image}" alt="Windchill Factor">
-        </div>
-        <div class="information">
-            <p>
-                <h3>Temperature: 10c</h3>
-                <h3>Conditions: Partly Cloudly</h3>
-                <h3>Wind: 5 km/h</h3>
-                <h3>Wind Chil: 9.8 C</h3>
-            </p>
-        </div>
-    </div>`
-	console.log(windchillsHTML)
+  if (wcEl) wcEl.textContent = result;
 });
-
-//Here the code display the windchill on the screen
-
-document.querySelector('.js-wind-chill-container').innerHTML = 	windchillsHTML;
-
-
