@@ -1,101 +1,89 @@
-/* Root variables (audit required :root) */
-:root{
-  --green: #1b8d3d;
-  --white: #ffffff;
-  --muted: #f6f7f8;
-  --border: #dcdcdc;
-  --text: #222222;
-  --font: "Roboto", sans-serif;
+/* Root variables */
+:root {
+    --primary-color: rgb(100,100,243);
+    --secondary-color: #f3f4f5;
+    --text-color: #000;
+    --header-height: 10vh;
 }
 
-/* Reset */
-*{ box-sizing: border-box; margin:0; padding:0; }
+/* Reset margins */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-/* Body & container */
-body{
-  font-family: var(--font);
-  background: var(--muted);
-  color: var(--text);
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 1rem;
+/* Body */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0 auto;
+    max-width: 1200px;
+    background-color: var(--secondary-color);
 }
 
 /* Header */
-header{
-  background: var(--green);
-  color: var(--white);
-  text-align: center;
-  padding: 1rem;
-  border-radius: 6px;
+header {
+    background-color: var(--primary-color);
+    color: #fff;
+    text-align: center;
+    height: var(--header-height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Main grid */
-main{
-  margin-top: 1rem;
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: 1fr;
+/* Main layout */
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
 }
 
-/* Hero */
-.hero img{
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 6px;
-  border: 1px solid var(--border);
+/* Hero Image */
+.hero picture, .hero img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
-/* Data card */
-.data{
-  background: var(--white);
-  padding: 1rem;
-  border-radius: 6px;
-  border: 1px solid var(--border);
+/* Country Data */
+.data ul {
+    list-style: none;
+    padding-left: 1rem;
 }
-.data ul{ list-style: none; }
-.data li{ padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0; }
 
-/* Weather card */
-.weather{
-  background: var(--white);
-  padding: 1rem;
-  border-radius: 6px;
-  border: 1px solid var(--border);
-  position: relative;
+.data li {
+    margin-bottom: 0.5rem;
 }
-.weather-info p{ margin: 0.4rem 0; }
 
-/* Inline SVG shown on small screens; hidden on larger screens */
-.weather-svg{ width: 50px; margin-top: 0.75rem; display: block; }
+/* Weather Section */
+.weather {
+    padding: 1rem;
+    background-color: #fff;
+    border: 1px solid #bbb;
+}
 
-/* Pseudo-element (audit required ::after) — use for desktop emoticon */
-.weather h2::after{
-  content: " ⛅";
-  font-size: 1.25rem;
-  display: none; /* shown on large screens via media query */
-  margin-left: 0.4rem;
+.weather h2::after {
+    content: " ⛅"; /* Emoticon for large view */
 }
 
 /* Footer */
-footer{
-  margin-top: 1rem;
-  background: var(--green);
-  color: var(--white);
-  text-align: center;
-  padding: 1rem;
-  border-radius: 6px;
+footer {
+    background-color: var(--primary-color);
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 1rem;
 }
 
-/* Large screens: two-column layout and switch icon method */
-@media (min-width:700px){
-  main{
-    grid-template-columns: 2fr 1fr; /* hero + right column (data + weather stacked) */
-    align-items: start;
-  }
+/* Media Queries */
+@media screen and (min-width: 700px) {
+    main {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
-  /* Hide inline SVG on large screens; show pseudo emoticon */
-  .weather-svg{ display: none; }
-  .weather h2::after{ display: inline; }
+    .weather h2::after {
+        content: " ⛅"; /* Show emoticon on large screens */
+    }
 }
