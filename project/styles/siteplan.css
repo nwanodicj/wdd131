@@ -1,379 +1,90 @@
-/*............Small Screen........*/
-* {
-    margin: 0;
-    max-width: 1500px;
+/* styles/siteplan.css
+   Minimal, clear styling for the site plan document.
+   (Option B requested: styled for readability)
+*/
+
+:root{
+  --primary: #111827;
+  --secondary: #E11D48;
+  --accent: #FBBF24;
+  --bg: #F5F5F5;
+  --text: #111827;
+  --muted: #6B7280;
+  --maxw: 1000px;
+  --radius: 8px;
+  --gap: 1rem;
+  font-family: Roboto, system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial;
 }
 
-  :root {
-    --primary-color: #86e646;
-    --secondary-color: #894857;
-    --accent1-color: #759930;
-    --accent2-color: #508374;
-
-    --heading-font: 'sans', serif;
-    --paragraph-font: 'sans', serif;
-
-    --nav-background-color: #873936;
-    --nav-link-color: #f0f0ee;
-    --nav-hover-link-color: #256847;
-    --nav-hover-background-color: #1111a3;
-    --h4-color: rgb(7, 7, 7);
-    --h2-color: #5160ec;
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.45;
+  -webkit-font-smoothing:antialiased;
+  padding:2rem;
+  display:flex;
+  justify-content:center;
 }
 
+main, header, footer{width:100%; max-width:var(--maxw)}
 
-body {
-  font-family: var(--paragraph-font);
-  padding: 10px;
-  max-width: 1500px;
-  width: 57vh;
+.site-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  margin-bottom:1rem;
+}
+.brand{display:flex; gap:1rem; align-items:center}
+.logo{width:64px; height:64px; object-fit:contain; border-radius:8px; background:white; padding:6px; box-shadow:0 1px 2px rgba(0,0,0,0.05)}
+.site-header h1{font-family:Montserrat, sans-serif; margin:0; font-size:1.4rem; color:var(--primary)}
+.site-header .tagline{margin:0; color:var(--muted); font-size:0.9rem}
+
+.meta{font-size:0.85rem; color:var(--muted)}
+
+.card{
+  background:white;
+  border-radius:var(--radius);
+  padding:1rem 1.25rem;
+  margin:0 0 1rem 0;
+  box-shadow: 0 4px 10px rgba(17,24,39,0.03);
 }
 
-.main-header {
-  background-color: var(--accent1-color);
-  border-style: none;
-  width: 50vh;
-}
-
-
-.navigation-bar {
-  background-color: var(--accent1-color);
-  margin-bottom: 2rem;
-}
-
-main{
-  background-color:rgb(225, 233, 235);
-}
-
-section {
-  display: block;
-  justify-content: space-between;
-  margin-top: 1rem; 
-}
-
-.div-container {
-  border-style: solid;
-  width: 55.5vh;
-  height: 15rem;
-  column-gap: 2rem;
-  background-color: rgb(245, 241, 241);
-}
-
-h4 {
-  font-family: var(--heading-font);
-  color: var(--h4-color);
-  font-size: 0.5rem;
-}
-
-.color-palette {
-  padding-top: 1rem;
-}
-
-h2 {
-  margin-top: 3rem;
-  color: var(--h2-color);
-  text-align: center;
-}
-
-h1 {
-  text-align: center;
-  color: rgb(228, 206, 206);
-  font-size: small;
-}
-
-header {
-  padding: 18px;
-  border-style: solid;
-}
-
-.my-name {
-  color: white;
-  font-size: 0.9rem;
-  text-align: center;
-}
-
-
-nav {
-  background-color: var();
-  font-size: 1rem;
-  display: flex;
-  justify-content: space-between;
-}
-
-nav a {
-  text-decoration: none;
-  padding: 0.5rem;
-}
-
-a {
-  color: var(--nav-hover-background-color);
-}
-
-/*nav a:link, nav a:visited {
-  color: var(--nav-link-color);
-}
-
-nav a:hover{
-  color: white;
-}*/
-
-footer {
-  background-color: var(--accent1-color);
-  color: white;
-  text-align: center;
-
-}
-
-span {
-  font-size: 10px;
-  margin-left: 4rem;
-  text-align: center;
-
-}
-
-.about-us-wireframe {
-height: 15rem;
-border-style: solid;
-column-gap: 2rem;
-width: 55.5vh;
-}
-
-.anchor  {
-border-style: solid;
-width: 6rem;
-height: 0.1rem;
-margin-top: 1rem;
-color: var(--h4-color);
-}
-
-input {
-margin-left: 4rem;
-}
-
-.text-area {
-text-align: center;
-margin-top: 5rem;
-}
-
-.search-bar {
-text-align: center;
-}
-
-
-/*Small screen wireframe styling*/
-
-.main-1{
-background-color:rgb(225, 233, 235);
-}
-
-.section-1 {
-display: block;
-justify-content: space-between;
-margin-top: 1rem; 
-}
-
-.div-container-1 {
-border-style: solid;
-width: 55.5vh;
-height: 15rem;
-column-gap: 2rem;
-background-color: rgb(245, 241, 241);
-}
-.header-1 {
-padding: 20px;
-border-style: solid;
-width: 48vh;
-}
-
-.nav-bar-1 .a-1 {
-font-size: large;
-width: 5rem;
-}
-
-.a-1 {
-margin-right: 2rem;
-text-align: center;
-color: var(--h2-color)
-}
-
-
-
-@media screen and (min-width: 500px){
-
-  * {
-    margin: 0 0 0 0;
-    max-width: 1500px;
-}
-
-  body {
-    font-family: var(--paragraph-font);
-    padding: 10px;
-    max-width: 1500px;
-    width: 219vh;
-  }
-
-  .main-header {
-    background-color: var(--accent1-color);
-    border-style: none;
-    width: 80.1rem;
-  }
-
-
-  .navigation-bar {
-    background-color: var(--accent1-color);
-    margin-bottom: 2rem;
-  }
-
-  main{
-    background-color:rgb(225, 233, 235);
-  }
-
-  section {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 1rem; 
-  }
-
-  .div-container {
-    border-style: solid;
-    width: 15.9rem;
-    height: 15rem;
-    column-gap: 2rem;
-    background-color: rgb(245, 241, 241);
-  }
-
- h4 {
-    font-family: var(--heading-font);
-    color: var(--h4-color);
-    text-align: center;
-    width: 30rem;
-    margin-left: 26rem;
-    font-size: 1rem;
-  }
-
-  .color-palette {
-    padding-top: 1rem;
-  }
-
-  h2 {
-    margin-top: 3rem;
-    color: var(--h2-color);
-    text-align: center;
-  }
-
-  h1 {
-    text-align: center;
-    color: rgb(228, 206, 206);
-    font-size: bold;
-  }
-
-  header {
-    padding: 20px;
-    border-style: solid;
-    width: 80.1rem;
-  }
-
-  .my-name {
-    color: white;
-    font-size: 0.9rem;
-    text-align: center;
-  }
-
- 
-  nav {
-    background-color: var();
-    font-size: 1.2rem;
-    display: flex;
-    justify-content: space-evenly;
-  }
-
-  nav a {
-    text-decoration: none;
-    padding: 1rem;
-  }
-
-  a {
-    color: var(--h2-color);
-  }
-  
-  footer {
-    background-color: var(--accent1-color);
-    color: white;
-    text-align: center;
-
-}
-
-span {
-    font-size: 10px;
-    margin-left: 4rem;
-    text-align: center;
-
-}
-
-.about-us-wireframe {
-  height: 15rem;
-  border-style: solid;
-  column-gap: 2rem;
-  width: 100rem;
-}
-
-.anchor  {
-  border-style: solid;
-  width: 6rem;
-  height: 0.1rem;
-  margin-top: 1rem;
-  color: var(--h2-color);
-}
-
-input {
-  margin-left: 34.5rem;
-}
-
-.text-area {
-  text-align: center;
-  margin-top: 5rem;
-}
-
-.search-bar {
-  text-align: center;
-}
-
-
-/*Small screen wireframe styling*/
-
-.main-1{
-  background-color:rgb(225, 233, 235);
-  margin-left: 30rem;
-}
-
-.section-1 {
-  display: block;
-  justify-content: space-between;
-  margin-top: 1rem; 
-}
-
-.div-container-1 {
-  border-style: solid;
-  width: 15.9rem;
-  height: 15rem;
-  column-gap: 2rem;
-  background-color: rgb(245, 241, 241);
-}
-.header-1 {
-  padding: 20px;
-  border-style: solid;
-  width: 13.4rem;
-  margin-left: 30rem;
-}
-
-.nav-bar-1 .a-1 {
-  font-size: large;
-  width: 5rem;
-}
-
-.a-1 {
-  margin-right: 2rem;
-  text-align: center;
-}
-  
+h2{font-family:Montserrat, sans-serif; color:var(--primary); margin:0 0 .5rem 0; font-size:1.15rem}
+h3{font-family:Montserrat, sans-serif; margin:.5rem 0}
+p, li{font-size:0.95rem; color:var(--primary); margin:0 0 .5rem 0}
+ul{margin:0 0 .5rem 1.25rem}
+ol{margin:0 0 .5rem 1.25rem}
+.small{font-size:0.85rem}
+.muted{color:var(--muted)}
+
+.branding-grid{display:grid; grid-template-columns: 1fr 1fr; gap:1rem}
+.logo-box{display:flex; flex-direction:column; align-items:flex-start; gap:0.5rem}
+.palette .swatches{list-style:none; padding:0; margin:0; display:flex; gap:0.75rem; flex-wrap:wrap}
+.palette .swatches li{display:flex; flex-direction:column; align-items:flex-start; gap:0.35rem; font-size:0.9rem}
+.swatch{width:48px; height:32px; border-radius:6px; display:inline-block; box-shadow:inset 0 -2px 4px rgba(0,0,0,0.05)}
+
+.typography p{margin:0 0 .5rem 0}
+
+.wireframe-grid{display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap:1rem; margin-top:.5rem}
+.wireframe{background:#fff; padding:0.75rem; border-radius:6px; box-shadow:0 2px 6px rgba(0,0,0,0.03)}
+.wireframe figcaption{font-weight:600; margin-bottom:0.5rem; font-family:Montserrat, sans-serif}
+
+.wf{border-radius:6px; border:1px dashed #E6E9EE; padding:8px; min-height:120px; display:flex; flex-direction:column; gap:.5rem; background:linear-gradient(#fff, #fbfbfb)}
+.wf.desktop .wf-hero{height:40px; background:#fff; border-radius:4px; display:flex; align-items:center; justify-content:center; color:var(--muted); font-weight:600}
+.wf.desktop .wf-row{height:28px; border-radius:4px; background:#fff; display:flex; align-items:center; justify-content:center; color:var(--muted)}
+.wf.mobile .wf-hero{height:36px; display:flex; align-items:center; justify-content:center; color:var(--muted)}
+.wf.mobile .wf-stack{height:28px; border-radius:4px; background:#fff; display:flex; align-items:center; justify-content:center; color:var(--muted)}
+.wf-split{display:flex; gap:8px}
+.wf-media{flex:1; min-height:120px; background:#fff; display:flex; align-items:center; justify-content:center; color:var(--muted)}
+.wf-details{flex:1; min-height:120px; background:#fff; display:flex; align-items:center; justify-content:center; color:var(--muted)}
+
+.site-footer{margin-top:1rem; text-align:center; color:var(--muted); font-size:.9rem}
+
+/* Responsive tweaks */
+@media (max-width:700px){
+  body{padding:1rem}
+  .branding-grid{grid-template-columns: 1fr}
 }
