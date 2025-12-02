@@ -1,113 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Review Form</title>
-    <meta name="description" content="Form learning activity page">
-    <meta name="author" content="Justice Chinwike Nwanodi">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="" href="https://fonts.googleapis.com/css2?family=roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/form.css">
-    <!-- Top Navigation Menu -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Product Review | FashionFinder</title>
+  <link rel="stylesheet" href="styles/form.css">
 </head>
 <body>
-    <header>
-        <div class="cart-container">
-            <a class="cart-link header-link" href="#">
-                <span class="cart-quantity js-cart-quantity">0</span>
-                <img class="cart-icon" src="images/cart-emoji.png">
-                <div class="cart-text">Cart</div>
-            </a>
+  <header class="site-header">
+    <h1>Product Review</h1>
+    <p class="subtitle">Please complete the form below to post a product review.</p>
+  </header>
+
+  <main>
+    <form id="reviewForm" class="review-form" method="get" action="review.html" novalidate>
+      <!-- Product Name -->
+      <fieldset>
+        <legend>Product Name <span class="required">*</span></legend>
+        <div class="form-row">
+          <label for="productName">Choose a Product</label>
+          <select id="productName" name="productId" required>
+            <option value="" disabled selected>Select a Product ...</option>
+          </select>
         </div>
-        <h1>Product Review</h1>
-        <a href="#home" class="active">Logo</a>
-    
-        <nav class="nav-bar-container">
-            <a class="js-home-page" href="">Home</a>
-            <a class="js-old-temples" href="#old-page" onclick="oldTemple()">About</a>
-            <a href="" onclick="newTemple()">Proposal</a>
-            <a href="" onclick="largeTemple()">Winners</a>
-            <a href="" onclick="smallTemple()">Contact</a>
-        </nav>
-        <div>
-            <output class="nav-links-output"></output>
+      </fieldset>
+
+      <!-- Overall Rating -->
+      <fieldset>
+        <legend>Overall Rating <span class="required">*</span></legend>
+        <div class="radio-group" role="radiogroup" aria-label="Overall Rating">
+          <input type="radio" id="rating1" name="rating" value="1" required>
+          <label for="rating1" title="1 star">&#9734;</label>
+
+          <input type="radio" id="rating2" name="rating" value="2">
+          <label for="rating2" title="2 stars">&#9734;&#9734;</label>
+
+          <input type="radio" id="rating3" name="rating" value="3">
+          <label for="rating3" title="3 stars">&#9734;&#9734;&#9734;</label>
+
+          <input type="radio" id="rating4" name="rating" value="4">
+          <label for="rating4" title="4 stars">&#9734;&#9734;&#9734;&#9734;</label>
+
+          <input type="radio" id="rating5" name="rating" value="5">
+          <label for="rating5" title="5 stars">&#9734;&#9734;&#9734;&#9734;&#9734;</label>
         </div>
-        <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-            <i class="fa fa-bars"></i>
-          </a>
-    </header>
-    <main>
-        <form method="get" action="review.html" class="form">
-            <legend>
-                Product Review
-            </legend>
-            <label>Product Name
-                <select id="productName" name="Product Name" required>
-                    <!--option disabled selected>Select a Product...</option>
-                    <option value="new cap">New Cap</option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option-->
-                </select>
-            </label>
-            <div class="radio-group">
-                <div>Overall Rating</div>
-                
-                <label>
-                    <input type="radio" id="overallRating" name="stars" required>*
-                </label>
-                <label>
-                    <input type="radio" id="overallRating" name="stars" required>**
-                </label>
-                <label>
-                    <input type="radio" id="overallRating" name="stars" required>***
-                </label>
-                <label>
-                    <input type="radio" id="overallRating" name="stars" required>****
-                </label>
-                <label>
-                    <input type="radio" id="overallRating" name="stars" required>*****
-                </label>
-            </div>
-            <div class="installed-date">Date of Installation</div>
-            <label><input type="date" class="date-input"></label>
-            <div class="h4-text">which feature do you find useful in the product?</div>
-            <div class="h5-text">(Check all that apply)</div>
-            <div class="checkbox-area">
-                <label><input type="checkbox" name="durability" value="yes" required>Durability</label>
-                <label><input type="checkbox" name="easy of use" value="yes" required>Easy of Use</label>
-                <label><input type="checkbox" name="performance" value="yes" required>Performance</label>
-                <label><input type="checkbox" name="design" value="yes" required>Design</label>
-            </div>
-            
-            <div class="text-area">
-                <div class="input-name">Write Review</div>
-                <div class="option input-name">(Optional)</div>
-            </div>
-            <textarea placeholder="Text Area" type="text" name="text area" class="input-area" required></textarea>
-            
-            <div class="text-area">
-                <div class="input-name">Your Name</div>
-                <div class="option input-name">(Optional)</div>
-            </div>
-            <input placeholder="Enter Your Name" type="text" name="text area" class="input-area" required>
-            <div> 
-                <button onclick='clickCounter()'><a href="https://nwanodicj.github.io/wdd131/form-thanks.html">Post Review</a></button>
-            </div>
-        </form>
-    </main>
-    
-    <footer>
-        &copy; 2024
-        &copy; Justice Chinwike Nwanodi
-        &copy; Nigeria
-        <p>
-        <span id="last-modification"></span>
-    </footer>
-    <script src="scripts/form.js"></script>
+      </fieldset>
+
+      <!-- Date of Installation -->
+      <fieldset>
+        <legend>Date of Installation <span class="required">*</span></legend>
+        <div class="form-row">
+          <label for="installDate">Installation Date</label>
+          <input type="date" id="installDate" name="installDate" required>
+        </div>
+      </fieldset>
+
+      <!-- Useful Features -->
+      <fieldset>
+        <legend>Which features did you find useful? <span class="optional">(Check all that apply)</span></legend>
+        <div class="checkbox-area">
+          <div>
+            <input type="checkbox" id="featDurability" name="features" value="Durability">
+            <label for="featDurability">Durability</label>
+          </div>
+          <div>
+            <input type="checkbox" id="featEase" name="features" value="Ease of Use">
+            <label for="featEase">Ease of Use</label>
+          </div>
+          <div>
+            <input type="checkbox" id="featPerformance" name="features" value="Performance">
+            <label for="featPerformance">Performance</label>
+          </div>
+          <div>
+            <input type="checkbox" id="featDesign" name="features" value="Design">
+            <label for="featDesign">Design</label>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Written Review -->
+      <fieldset>
+        <legend>Written Review <span class="optional">(Optional)</span></legend>
+        <div class="form-row">
+          <textarea id="writtenReview" name="reviewText" rows="5" placeholder="Write your review here (optional)"></textarea>
+        </div>
+      </fieldset>
+
+      <!-- User Name -->
+      <fieldset>
+        <legend>Your Name <span class="optional">(Optional)</span></legend>
+        <div class="form-row">
+          <input type="text" id="userName" name="userName" placeholder="Enter your name">
+        </div>
+      </fieldset>
+
+      <!-- Submit -->
+      <div class="form-row">
+        <input type="submit" value="Post Review" class="submit-btn">
+      </div>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> FashionFinder — Justice Chinwike Stephen</p>
+    <p class="muted small">Last modified: <time id="last-mod"></time></p>
+  </footer>
+
+  <script src="scripts/form.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('last-mod').textContent = new Date(document.lastModified).toLocaleDateString();
+  </script>
 </body>
 </html>

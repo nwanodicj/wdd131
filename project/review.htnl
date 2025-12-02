@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Review Confirmation | FashionFinder</title>
+  <link rel="stylesheet" href="styles/form.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>Thank You!</h1>
+    <p class="subtitle">Your review has been submitted successfully.</p>
+  </header>
+
+  <main>
+    <p id="reviewCount"></p>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> FashionFinder — Justice Chinwike Stephen</p>
+    <p class="muted small">Last modified: <time id="last-mod"></time></p>
+  </footer>
+
+  <script src="scripts/review.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('last-mod').textContent = new Date(document.lastModified).toLocaleDateString();
+  </script>
+</body>
+</html>
